@@ -4,6 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solicitud recibida | Cyrmarsan S.L.</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage:    'denied',
+      ad_storage:           'denied',
+      ad_user_data:         'denied',
+      ad_personalization:   'denied',
+      wait_for_update:       500
+    });
+    try {
+      if (localStorage.getItem('cyrmarsan_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch(e) {}
+  </script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,6 +30,515 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-W7MDK8Z3');</script>
   <!-- End Google Tag Manager -->
+
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link href="https://fonts.bunny.net/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:       oklch(72% 0.10 80);
+      --gold-light: oklch(84% 0.07 80);
+      --gold-dim:   oklch(60% 0.08 80);
+      --ink:        oklch(11% 0.012 250);
+      --ink-mid:    oklch(22% 0.012 250);
+      --cream:      oklch(97% 0.006 80);
+      --muted:      oklch(78% 0.008 80);
+      --line:       oklch(100% 0 0 / 0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--ink);
+      color: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      background: oklch(8% 0.02 250 / 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid oklch(100% 0 0 / 0.08);
+      box-shadow: 0 4px 40px oklch(0% 0 0 / 0.35);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-sep {
+      width: 1px;
+      height: 20px;
+      background: oklch(100% 0 0 / 0.2);
+    }
+
+    .nav-tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      line-height: 1.45;
+    }
+
+    .nav-spacer { flex: 1; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 9px 22px;
+      border: 1px solid oklch(100% 0 0 / 0.22);
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .nav-cta:hover {
+      border-color: var(--gold-dim);
+      color: var(--gold-light);
+      background: oklch(72% 0.10 80 / 0.08);
+    }
+
+    .nav-cta svg { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
+
+    /* ── MAIN CONTENT ── */
+    .page-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Gold line top */
+    .page-main::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent);
+      background-size: 200% 100%;
+      animation: goldShimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes goldShimmer {
+      0%   { background-position: 100% 0; }
+      100% { background-position: -100% 0; }
+    }
+
+    /* Subtle radial glow */
+    .page-main::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, oklch(72% 0.10 80 / 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .check-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: oklch(72% 0.10 80 / 0.10);
+      border: 1px solid oklch(72% 0.10 80 / 0.35);
+      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.6); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .check-wrap svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      animation: drawCheck 0.5s ease 0.3s forwards;
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow-line {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .eyebrow-text {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+
+    .card-title strong {
+      font-weight: 600;
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .card-body {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 28px;
+      background: var(--gold);
+      color: oklch(10% 0.02 80);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.80rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px oklch(72% 0.10 80 / 0.30);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 32px oklch(72% 0.10 80 / 0.4);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 28px;
+      color: var(--cream);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.80rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid oklch(100% 0 0 / 0.22);
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold-dim);
+      color: var(--gold-light);
+      background: oklch(72% 0.10 80 / 0.08);
+    }
+
+    .btn-gold svg, .btn-ghost svg {
+      width: 14px; height: 14px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── FLOATING BUTTONS ── */
+    .fab-group {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 300;
+    }
+
+    .fab {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px oklch(0% 0 0 / 0.35);
+    }
+
+    .fab:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 10px 32px oklch(0% 0 0 / 0.45); }
+
+    .fab-whatsapp { background: #25D366; }
+    .fab-call     { background: var(--gold); }
+
+    .fab svg { width: 24px; height: 24px; fill: white; }
+    .fab-call svg { fill: oklch(10% 0.02 80); }
+
+    .fab-tooltip {
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: oklch(15% 0.015 250);
+      color: var(--cream);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 2px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      border: 1px solid var(--line);
+    }
+
+    .fab:hover .fab-tooltip { opacity: 1; }
+
+    .fab-pulse::after, .fab-call-pulse::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      animation: fabPulse 2.5s ease-out infinite;
+    }
+
+    .fab-pulse::after { border: 2px solid #25D366; }
+    .fab-call-pulse::after { border: 2px solid var(--gold); animation-delay: 0.8s; }
+
+    @keyframes fabPulse {
+      0%   { transform: scale(1);   opacity: 0.6; }
+      100% { transform: scale(1.65); opacity: 0; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: oklch(8% 0.015 250);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 0;
+      padding: 52px 48px 44px;
+    }
+
+    .footer-col { padding-right: 48px; }
+    .footer-col:last-child { padding-right: 0; }
+    .footer-col + .footer-col {
+      padding-left: 48px;
+      border-left: 1px solid var(--line);
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .footer-tagline {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 16px;
+    }
+
+    .footer-desc {
+      font-size: 0.80rem;
+      font-weight: 300;
+      color: oklch(55% 0.006 80);
+      line-height: 1.75;
+      max-width: 280px;
+      margin-bottom: 16px;
+    }
+
+    .footer-cif {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: oklch(42% 0.006 80);
+    }
+
+    .footer-col-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 18px;
+    }
+
+    .footer-contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.80rem;
+      font-weight: 400;
+      color: oklch(55% 0.006 80);
+      line-height: 1.5;
+    }
+
+    .footer-contact-list svg {
+      width: 13px; height: 13px;
+      fill: var(--gold-dim);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .footer-contact-list a,
+    .footer-contact-list span {
+      color: oklch(55% 0.006 80);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact-list a:hover { color: var(--gold-light); }
+
+    .footer-legal-bar {
+      border-top: 1px solid var(--line);
+      padding: 18px 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-legal-icon {
+      width: 28px; height: 28px;
+      border-radius: 3px;
+      background: oklch(72% 0.10 80 / 0.08);
+      border: 1px solid oklch(72% 0.10 80 / 0.18);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .footer-legal-icon svg { width: 12px; height: 12px; fill: oklch(50% 0.005 80); }
+
+    .footer-legal {
+      font-size: 0.70rem;
+      color: oklch(38% 0.005 80);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal-links a {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: oklch(45% 0.006 80);
+      text-decoration: none;
+      border-bottom: 1px solid oklch(100% 0 0 / 0.12);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .footer-legal-links a:hover { color: var(--gold-dim); border-color: oklch(72% 0.10 80 / 0.3); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .site-nav { padding: 0 24px; }
+      .nav-sep, .nav-tagline { display: none; }
+      .footer-main { grid-template-columns: 1fr; padding: 40px 24px 32px; }
+      .footer-col { padding-right: 0; padding-left: 0 !important; border-left: none !important; border-top: 1px solid var(--line); padding-top: 28px; }
+      .footer-col:first-child { border-top: none; padding-top: 0; }
+      .footer-legal-bar { padding: 16px 24px; }
+      .card-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -18,7 +546,133 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<p>¡Gracias! Nos pondremos en contacto contigo en menos de 24 horas.</p>
+<!-- ── NAV ── -->
+<nav class="site-nav">
+  <a href="/" class="nav-brand">
+    <span class="nav-logo">Cyrmarsan</span>
+    <span class="nav-sep"></span>
+    <span class="nav-tagline">Mamparas<br>Sierra Noroeste</span>
+  </a>
+  <div class="nav-spacer"></div>
+  <a href="tel:+34667577891" class="nav-cta">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+    +34&nbsp;667&nbsp;577&nbsp;891
+  </a>
+</nav>
+
+<!-- ── CONTENIDO ── -->
+<main class="page-main">
+  <div class="card">
+
+    <div class="check-wrap">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <div class="eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Solicitud recibida</span>
+      <span class="eyebrow-line"></span>
+    </div>
+
+    <h1 class="card-title">
+      ¡Gracias por<br />
+      <strong>contactar con nosotros!</strong>
+    </h1>
+
+    <p class="card-body">
+      Hemos recibido tu solicitud de presupuesto. Nos pondremos en contacto contigo
+      en menos de <strong style="color:var(--cream);font-weight:600;">24 horas</strong>
+      con una propuesta personalizada.<br /><br />
+      Si lo prefieres, llámanos ahora mismo y lo resolvemos en el momento.
+    </p>
+
+    <div class="card-actions">
+      <a href="tel:+34667577891" class="btn-gold">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+        Llamar ahora
+      </a>
+      <a href="/" class="btn-ghost">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Volver al inicio
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── FLOATING BUTTONS ── -->
+<div class="fab-group">
+  <a href="https://wa.me/34667577891?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20una%20mampara" target="_blank" rel="noopener" class="fab fab-whatsapp fab-pulse" aria-label="WhatsApp">
+    <span class="fab-tooltip">Escríbenos por WhatsApp</span>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.533 5.851L.057 23.428a.75.75 0 0 0 .921.921l5.593-1.474A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.523-5.222-1.431l-.374-.222-3.878 1.021 1.023-3.858-.232-.381A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+  <a href="tel:+34667577891" class="fab fab-call fab-call-pulse" aria-label="Llamar">
+    <span class="fab-tooltip">Llámanos ahora</span>
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+  </a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-col">
+        <div class="footer-logo">Cyrmarsan S.L.</div>
+        <div class="footer-tagline">Mamparas · Sierra Noroeste de Madrid</div>
+        <p class="footer-desc">
+          Especialistas en mamparas de ducha y bañera a medida. Instalación profesional en toda la Sierra Noroeste de Madrid desde Galapagar.
+        </p>
+        <span class="footer-cif">CIF B-81197295</span>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-label">Contacto</p>
+        <ul class="footer-contact-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+            <a href="tel:+34667577891">+34 667 577 891</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Calle La Libertad, Nº 1, 1º E<br />28260 Galapagar, Madrid</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-label">Zona de cobertura</p>
+        <ul class="footer-contact-list">
+          <li><span style="padding-left:0">Galapagar · Las Rozas · Majadahonda</span></li>
+          <li><span>Pozuelo · Torrelodones · Alpedrete</span></li>
+          <li><span>Collado Villalba · El Escorial</span></li>
+          <li><span>Boadilla · Hoyo de Manzanares</span></li>
+          <li><span>Y toda la Sierra Noroeste de Madrid</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal-bar">
+      <div class="footer-legal-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div style="flex:1">
+        <p class="footer-legal">
+          © 2026 Cyrmarsan S.L. · CIF B-81197295 · Calle La Libertad Nº 1, 1º E, 28260 Galapagar, Madrid. Todos los derechos reservados.
+          Tratamiento de datos conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
+        </p>
+        <div class="footer-legal-links">
+          <a href="/">Aviso Legal</a>
+          <a href="/">Política de Privacidad</a>
+          <a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
