@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mamparas Sierra Noroeste Madrid | Cyrmarsan S.L.</title>
   <meta name="description" content="Mamparas de ducha y baño a medida en la Sierra Noroeste de Madrid. Instalación profesional, presupuesto sin compromiso. Galapagar, Las Rozas, Majadahonda, Pozuelo." />
+  <!-- Google Consent Mode v2 — analytics bloqueado hasta consentimiento -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage:    'denied',
+      ad_storage:           'denied',
+      ad_user_data:         'denied',
+      ad_personalization:   'denied',
+      wait_for_update:       500
+    });
+    // Si el usuario ya aceptó en una visita anterior, activa analytics de inmediato
+    try {
+      if (localStorage.getItem('cyrmarsan_cookie_consent') === 'accepted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch(e) {}
+  </script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -2012,14 +2030,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Si considera que el tratamiento de sus datos no se ajusta a la normativa, tiene derecho a reclamar ante la <strong>Agencia Espanola de Proteccion de Datos (AEPD)</strong>: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
 
       <h3>8. Cookies</h3>
-      <p>Este sitio web <strong>no utiliza cookies de seguimiento, publicitarias ni analiticas</strong>. Las tipografias se cargan desde Bunny Fonts (<a href="https://fonts.bunny.net" target="_blank" rel="noopener">fonts.bunny.net</a>), un servicio respetuoso con la privacidad conforme al RGPD que no transfiere datos a terceros ni instala cookies. El servidor de alojamiento puede generar registros tecnicos de acceso que no contienen informacion personal identificable, conservados el tiempo minimo para la seguridad del sistema.</p>
+      <p>Este sitio web utiliza las siguientes categorias de cookies:</p>
+      <ul>
+        <li><strong>Cookies tecnicas (necesarias):</strong> imprescindibles para el funcionamiento del sitio. No requieren consentimiento.</li>
+        <li><strong>Cookies analiticas (opcionales):</strong> utilizamos <strong>Google Analytics 4</strong> a traves de <strong>Google Tag Manager (GTM-W7MDK8Z3)</strong> para medir el trafico de forma anonima. Solo se activan si usted acepta expresamente mediante el banner de consentimiento. Puede rechazarlas o revocar su consentimiento en cualquier momento.</li>
+      </ul>
+      <p>Las tipografias se cargan desde Bunny Fonts (<a href="https://fonts.bunny.net" target="_blank" rel="noopener">fonts.bunny.net</a>), servicio conforme al RGPD que no instala cookies. Implementamos <strong>Google Consent Mode v2</strong>: mientras no se otorgue consentimiento, las cookies analiticas permanecen bloqueadas. El servidor de alojamiento puede generar registros tecnicos de acceso sin informacion personal identificable.</p>
 
       <h3>9. Seguridad</h3>
       <p>Cyrmarsan S.L. aplica las medidas tecnicas y organizativas adecuadas para garantizar la seguridad de los datos personales y evitar su alteracion, perdida o acceso no autorizado.</p>
 
       <h3>10. Modificaciones</h3>
       <p>Cyrmarsan S.L. se reserva el derecho a modificar esta Politica de Privacidad para adaptarla a novedades legislativas. La version vigente sera siempre la publicada en este sitio web.</p>
-      <p style="margin-top:16px;font-size:0.75rem;color:oklch(55% 0.005 80)">Ultima actualizacion: abril de 2025.</p>
+      <p style="margin-top:16px;font-size:0.75rem;color:oklch(55% 0.005 80)">Ultima actualizacion: abril de 2026.</p>
     </div>
   </div>
 </div>
@@ -2075,11 +2098,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     window.acceptCookies = function() {
       try { localStorage.setItem(STORAGE_KEY, 'accepted'); } catch(e) {}
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
       hideBanner();
     };
 
     window.rejectCookies = function() {
       try { localStorage.setItem(STORAGE_KEY, 'rejected'); } catch(e) {}
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { analytics_storage: 'denied' });
+      }
       hideBanner();
     };
 
