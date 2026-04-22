@@ -1903,8 +1903,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
 
       if (res.ok) {
-        form.classList.add('hidden');
-        success.classList.add('visible');
+        window.location.href = '/gracias.html';
       } else {
         btn.textContent = 'Error. Inténtalo de nuevo';
         btn.disabled = false;
