@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mamparas Sierra Noroeste Madrid | Cyrmarsan S.L.</title>
-  <meta name="description" content="Mamparas de ducha y baño a medida en la Sierra Noroeste de Madrid. Instalación profesional, presupuesto sin compromiso. Galapagar, Las Rozas, Majadahonda, Pozuelo." />
-  <!-- Google Consent Mode v2 — analytics bloqueado hasta consentimiento -->
+  <!-- Google Consent Mode v2 -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -16,7 +14,6 @@
       ad_personalization:   'denied',
       wait_for_update:       500
     });
-    // Si el usuario ya aceptó en una visita anterior, activa analytics de inmediato
     try {
       if (localStorage.getItem('cyrmarsan_cookie_consent') === 'accepted') {
         gtag('consent', 'update', { analytics_storage: 'granted' });
@@ -30,76 +27,48 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-W7MDK8Z3');</script>
   <!-- End Google Tag Manager -->
-  <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link href="https://fonts.bunny.net/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-
+  <title>Mamparas Kassandra · Sierra Noroeste Madrid | Cyrmarsan S.L.</title>
+  <meta name="description" content="Instaladores oficiales de mamparas Kassandra en la Sierra Noroeste de Madrid. Ducha y bañera a medida en Galapagar, Las Rozas, Majadahonda, Pozuelo y más. Presupuesto gratuito." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Cyrmarsan S.L.","description":"Especialistas en mamparas de ducha y bañera a medida en la Sierra Noroeste de Madrid.","telephone":"+34667577891","email":"cyrmarsan@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Calle La Libertad, Nº 1, 1º E","addressLocality":"Galapagar","postalCode":"28260","addressRegion":"Madrid","addressCountry":"ES"},"areaServed":["Galapagar","Las Rozas","Majadahonda","Pozuelo de Alarcón","Torrelodones","Collado Villalba","El Escorial"],"priceRange":"€€"}</script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { padding-top: 0; } /* hero goes full bleed */
 
-    :root {
-      --gold:       oklch(72% 0.10 80);
-      --gold-light: oklch(84% 0.07 80);
-      --gold-dim:   oklch(60% 0.08 80);
-      --ink:        oklch(11% 0.012 250);
-      --ink-mid:    oklch(22% 0.012 250);
-      --cream:      oklch(97% 0.006 80);
-      --muted:      oklch(78% 0.008 80);
-      --line:       oklch(100% 0 0 / 0.09);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--ink);
-      color: var(--cream);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ─────────────────────────────
-       HERO
-    ───────────────────────────── */
+    /* ── HERO ── */
     .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column;
+      padding-bottom: 90px; /* space for floating trust bar */
+    }
+
+    .hero::before {
+      content: ''; position: absolute; top: var(--nav-h); left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, oklch(72% 0.10 80 / 0.2), transparent);
+      z-index: 3;
     }
 
     .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1920&q=90&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center center;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 90px;
+      background-size: cover; background-position: center;
       z-index: 0;
       animation: kenBurns 24s ease-in-out infinite alternate;
     }
 
     @keyframes kenBurns {
       0%   { transform: scale(1.10) translate(-2%, 1%); }
-      50%  { transform: scale(1.14) translate(1.5%, -1.5%); }
-      100% { transform: scale(1.07) translate(2%, 2%); }
+      100% { transform: scale(1.06) translate(2%, -1%); }
     }
 
-    /* Light sweep: sunlight catching glass */
     .hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: -20%;
-      background: linear-gradient(
-        112deg,
-        transparent 0%,
-        transparent 38%,
-        oklch(98% 0.005 80 / 0.06) 44%,
-        oklch(98% 0.005 80 / 0.20) 50%,
-        oklch(98% 0.005 80 / 0.06) 56%,
-        transparent 62%,
-        transparent 100%
-      );
-      animation: lightSweep 9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      content: ''; position: absolute; inset: -20%;
+      background: linear-gradient(112deg,
+        transparent 38%, oklch(98% 0.005 80 / 0.06) 44%,
+        oklch(98% 0.005 80 / 0.18) 50%, oklch(98% 0.005 80 / 0.06) 56%, transparent 62%);
+      animation: lightSweep 9s cubic-bezier(0.4,0,0.6,1) infinite;
       pointer-events: none;
     }
 
@@ -112,1486 +81,330 @@
     }
 
     .hero-overlay {
-      position: absolute;
-      inset: 0;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 90px;
       background:
         linear-gradient(to right,
-          oklch(8% 0.02 250 / 0.96) 0%,
-          oklch(8% 0.02 250 / 0.78) 45%,
-          oklch(8% 0.02 250 / 0.25) 75%,
-          oklch(8% 0.02 250 / 0.10) 100%
+          oklch(8% 0.02 250 / 0.88) 0%,
+          oklch(8% 0.02 250 / 0.78) 30%,
+          oklch(8% 0.02 250 / 0.45) 55%,
+          oklch(8% 0.02 250 / 0.18) 75%,
+          oklch(8% 0.02 250 / 0.08) 100%
         ),
         linear-gradient(to bottom,
-          oklch(8% 0.02 250 / 0.40) 0%,
-          transparent 20%,
-          transparent 75%,
-          oklch(8% 0.02 250 / 0.70) 100%
+          oklch(8% 0.02 250 / 0.55) 0%,
+          oklch(8% 0.02 250 / 0.10) 20%,
+          oklch(8% 0.02 250 / 0.10) 60%,
+          oklch(8% 0.02 250 / 0.75) 100%
         );
       z-index: 1;
     }
 
-    /* Shimmer particles — water/glass light dots */
-    .hero-particles {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .p {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, oklch(92% 0.05 80 / 0.6) 0%, transparent 70%);
-      animation: floatParticle var(--d) ease-in-out var(--dl) infinite;
-    }
-
-    @keyframes floatParticle {
-      0%   { transform: translateY(20px) scale(0.5); opacity: 0; }
-      25%  { opacity: 0.8; }
-      75%  { opacity: 0.4; }
-      100% { transform: translateY(-60px) scale(1.3); opacity: 0; }
-    }
-
-    /* Animated gold accent line top */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(to right, transparent, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent);
-      background-size: 200% 100%;
-      z-index: 10;
-      animation: goldShimmer 4s ease-in-out infinite;
-    }
-
-    @keyframes goldShimmer {
-      0%   { background-position: 100% 0; }
-      100% { background-position: -100% 0; }
-    }
+    .hero-particles { position: absolute; top: 0; left: 0; right: 0; bottom: 90px; z-index: 2; pointer-events: none; overflow: hidden; }
+    .p { position: absolute; border-radius: 50%; background: radial-gradient(circle, oklch(92% 0.05 80 / 0.55) 0%, transparent 70%); animation: floatP var(--d) ease-in-out var(--dl) infinite; }
+    @keyframes floatP { 0% { transform: translateY(16px) scale(0.5); opacity: 0; } 25% { opacity: 0.9; } 75% { opacity: 0.4; } 100% { transform: translateY(-64px) scale(1.4); opacity: 0; } }
 
     .hero-main {
-      position: relative;
-      z-index: 2;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      max-width: 1280px;
-      width: 100%;
+      position: relative; z-index: 3;
+      flex: 1; display: flex; align-items: center;
+      max-width: 1280px; width: 100%;
       margin: 0 auto;
-      padding: 120px 48px 60px;
+      padding: calc(var(--nav-h) + 40px) 48px 60px;
       gap: 72px;
     }
 
-    /* ── LEFT COPY ── */
     .hero-copy { flex: 1; min-width: 0; }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 32px;
-    }
-
-    .eyebrow-line {
-      width: 36px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .eyebrow-text {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+    .eyebrow-line { width: 32px; height: 1px; background: var(--gold); }
+    .eyebrow-text { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
 
     .hero-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-      font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-bottom: 28px;
-      text-wrap: pretty;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4.2vw, 4rem);
+      font-weight: 300; line-height: 1.08; letter-spacing: -0.01em;
+      margin-bottom: 20px; text-wrap: pretty;
     }
 
-    .hero-title strong {
-      font-weight: 600;
-      display: block;
-      color: var(--gold-light);
-    }
+    .hero-title strong { font-weight: 600; display: block; color: var(--gold-light); }
 
     .hero-subtitle {
-      font-size: 0.93rem;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 420px;
-      margin-bottom: 44px;
-      text-wrap: pretty;
+      font-size: 0.92rem; font-weight: 300;
+      color: var(--muted); line-height: 1.75; max-width: 420px;
+      margin-bottom: 40px; text-wrap: pretty;
     }
 
-    .hero-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+    .hero-features { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 
-    .hero-features li {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.01em;
-    }
+    .hero-features li { display: flex; align-items: center; gap: 12px; font-size: 0.84rem; font-weight: 500; color: var(--muted); }
 
-    .feature-mark {
-      width: 22px; height: 22px;
-      border-radius: 50%;
-      border: 1px solid oklch(72% 0.10 80 / 0.5);
-      background: oklch(72% 0.10 80 / 0.1);
+    .fmark {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      border: 1px solid oklch(72% 0.10 80 / 0.45);
+      background: oklch(72% 0.10 80 / 0.10);
       display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
     }
 
-    .feature-mark svg {
-      width: 10px; height: 10px;
-      fill: var(--gold);
-    }
+    .fmark svg { width: 9px; height: 9px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-    /* ── FORM CARD ── */
-    .form-wrap {
-      width: 420px;
-      flex-shrink: 0;
-    }
+    /* Form */
+    .form-wrap { width: 420px; flex-shrink: 0; }
 
     .form-card {
-      background: var(--cream);
-      border-radius: 8px;
-      color: var(--ink);
-      overflow: hidden;
-      box-shadow:
-        0 0 0 1px oklch(50% 0 0 / 0.08),
-        0 40px 100px oklch(0% 0 0 / 0.55),
-        0 8px 24px oklch(0% 0 0 / 0.25);
+      background: var(--cream); border-radius: 4px; color: var(--ink); overflow: hidden;
+      box-shadow: 0 0 0 1px oklch(0% 0 0 / 0.12), 0 48px 100px oklch(0% 0 0 / 0.6);
     }
 
     .form-header {
-      background: var(--ink-mid);
-      padding: 20px 28px;
-      border-bottom: 1px solid oklch(100% 0 0 / 0.08);
-      display: flex;
-      align-items: center;
-      gap: 14px;
+      background: var(--ink-mid); padding: 18px 28px;
+      border-bottom: 1px solid var(--line);
+      display: flex; align-items: center; gap: 14px;
     }
 
-    .form-header-accent {
-      width: 3px;
-      height: 36px;
-      background: var(--gold);
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
+    .form-accent { width: 3px; height: 34px; background: var(--gold); border-radius: 2px; flex-shrink: 0; }
 
-    .form-header-text {}
+    .form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--cream); }
+    .form-sub { font-size: 0.7rem; color: oklch(60% 0.01 80); margin-top: 2px; }
 
-    .form-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: var(--cream);
-      letter-spacing: 0.01em;
-    }
+    .form-body { padding: 24px 28px 22px; }
+    .form-group { margin-bottom: 13px; }
 
-    .form-card-sub {
-      font-size: 0.72rem;
-      color: oklch(65% 0.01 80);
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      margin-top: 1px;
-    }
-
-    .form-body { padding: 28px 28px 24px; }
-
-    .form-group { margin-bottom: 14px; }
-
-    label {
-      display: block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: oklch(38% 0.01 80);
-      margin-bottom: 5px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
+    label { display: block; font-size: 0.67rem; font-weight: 700; color: oklch(38% 0.01 80); margin-bottom: 4px; letter-spacing: 0.1em; text-transform: uppercase; }
 
     input, select, textarea {
-      width: 100%;
-      padding: 11px 14px;
-      border: 1px solid oklch(86% 0.005 80);
-      border-radius: 2px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.88rem;
-      color: var(--ink);
-      background: #fff;
+      width: 100%; padding: 10px 12px;
+      border: 1.5px solid oklch(85% 0.005 80); border-radius: 2px;
+      font-family: 'Montserrat', sans-serif; font-size: 0.87rem;
+      color: var(--ink); background: #fff;
       transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-      -webkit-appearance: none;
+      outline: none; -webkit-appearance: none;
     }
 
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--gold-dim);
-      box-shadow: 0 0 0 3px oklch(72% 0.10 80 / 0.12);
-    }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold-dim); box-shadow: 0 0 0 3px oklch(72% 0.10 80 / 0.12); }
 
-    textarea { resize: vertical; min-height: 76px; }
+    textarea { resize: vertical; min-height: 70px; }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
 
     .btn-submit {
-      width: 100%;
-      padding: 16px 24px;
-      background: var(--gold);
-      color: oklch(10% 0.02 80);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 2px;
-      cursor: pointer;
-      margin-top: 8px;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px oklch(72% 0.10 80 / 0.30);
+      width: 100%; padding: 15px 24px;
+      background: var(--gold); color: oklch(10% 0.02 80);
+      font-family: 'Montserrat', sans-serif; font-size: 0.8rem;
+      font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
+      border: none; border-radius: 2px; cursor: pointer; margin-top: 6px;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px oklch(72% 0.10 80 / 0.3);
     }
 
-    .btn-submit:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 32px oklch(72% 0.10 80 / 0.4);
-    }
+    .btn-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
-    .btn-submit:active { transform: none; }
-
-    .form-legal {
-      font-size: 0.67rem;
-      color: oklch(55% 0.005 80);
-      margin-top: 12px;
-      line-height: 1.55;
-      text-align: center;
-    }
-
+    .form-legal { font-size: 0.66rem; color: oklch(55% 0.005 80); margin-top: 10px; line-height: 1.55; text-align: center; }
     .form-legal a { color: oklch(45% 0.01 80); text-decoration: underline; }
 
-    /* Success state */
-    .form-success { display: none; text-align: center; padding: 40px 20px; }
+    .form-success { display: none; text-align: center; padding: 36px 20px; }
     .form-success.visible { display: block; }
     .form-form.hidden { display: none; }
 
-    .success-icon {
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: oklch(72% 0.10 80 / 0.12);
-      border: 1px solid var(--gold-dim);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
-      color: var(--gold);
-      font-size: 22px;
+    .success-icon { width: 50px; height: 50px; border-radius: 50%; background: oklch(58% 0.15 145 / 0.12); border: 1px solid oklch(58% 0.15 145 / 0.5); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 20px; }
+    .success-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .success-body { font-size: 0.82rem; color: oklch(42% 0.01 80); line-height: 1.7; }
+
+    /* ── SERVICES PREVIEW ── */
+    .services { background: var(--cream); padding: 96px 48px; }
+    .services-inner { max-width: 1280px; margin: 0 auto; }
+
+    .services-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 56px; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: oklch(88% 0.005 80); }
+
+    .service-card-img {
+      width: 100%; aspect-ratio: 4/3;
+      overflow: hidden;
+      background: oklch(94% 0.004 80);
     }
 
-    .success-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 8px;
+    .service-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      transition: transform 0.5s ease;
+      display: block;
     }
 
-    .success-body {
-      font-size: 0.82rem;
-      color: oklch(42% 0.01 80);
-      line-height: 1.7;
-    }
+    .service-card:hover .service-card-img img { transform: scale(1.06); }
 
-    /* ─────────────────────────────
-       TRUST BAR
-    ───────────────────────────── */
-    .trust-bar {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      background: oklch(7% 0.015 250 / 0.92);
-      border-top: 1px solid var(--line);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-
-    .trust-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 48px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 24px 20px;
-      border-right: 1px solid var(--line);
-      text-decoration: none;
-      transition: background 0.25s;
+    .service-card {
+      background: var(--cream); padding: 36px 28px;
+      transition: background 0.3s; position: relative; overflow: hidden;
       cursor: default;
     }
 
-    a.trust-item { cursor: pointer; }
-    .trust-item:last-child { border-right: none; }
-    .trust-item:hover { background: oklch(100% 0 0 / 0.03); }
-
-    .trust-icon-wrap {
-      width: 42px; height: 42px;
-      border-radius: 3px;
-      background: oklch(72% 0.10 80 / 0.10);
-      border: 1px solid oklch(72% 0.10 80 / 0.22);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .trust-icon-wrap svg { width: 18px; height: 18px; fill: var(--gold); }
-
-    .trust-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 3px;
-    }
-
-    .trust-value {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--cream);
-      line-height: 1.3;
-    }
-
-    /* ─────────────────────────────
-       WHY US SECTION
-    ───────────────────────────── */
-    .why {
-      background: var(--cream);
-      color: var(--ink);
-      padding: 88px 48px 96px;
-      position: relative;
-    }
-
-    .why::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 48px; right: 48px;
-      height: 1px;
-      background: linear-gradient(to right, transparent, oklch(72% 0.10 80 / 0.25) 30%, oklch(72% 0.10 80 / 0.25) 70%, transparent);
-    }
-
-    .why-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .section-eyebrow-line { width: 32px; height: 1px; background: var(--gold-dim); }
-
-    .section-eyebrow-text {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--ink);
-      max-width: 700px;
-      margin-bottom: 48px;
-      text-wrap: pretty;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: oklch(88% 0.005 80);
-    }
-
-    .why-card {
-      background: var(--cream);
-      padding: 40px 36px;
-      transition: background 0.25s;
-    }
-
-    .why-card {
-      background: var(--cream); padding: 32px 36px;
-      transition: background 0.3s, transform 0.3s;
-      position: relative; overflow: hidden;
-    }
-
-    .why-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px;
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(to right, var(--gold-dim), var(--gold));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    .why-card:hover::after { transform: scaleX(1); }
-    .why-card:hover { background: oklch(98% 0.004 80); transform: translateY(-3px); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-card:hover { background: oklch(98% 0.004 80); }
 
-    .why-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.6rem;
-      font-weight: 300;
-      color: oklch(84% 0.008 80);
-      line-height: 0.85;
-      margin-bottom: 16px;
-      letter-spacing: -0.04em;
-    }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: oklch(91% 0.004 80); line-height: 0.85; margin-bottom: 20px; letter-spacing: -0.04em; }
+    .service-icon { width: 32px; height: 32px; margin-bottom: 16px; }
+    .service-icon svg { width: 100%; height: 100%; fill: var(--gold-dim); }
+    .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.2; }
+    .service-body { font-size: 0.8rem; color: oklch(44% 0.01 80); line-height: 1.75; text-wrap: pretty; }
 
-    .why-card-icon {
-      width: 34px; height: 34px;
-      margin-bottom: 14px;
-    }
+    /* ── HOW SECTION ── */
+    .how { background: var(--ink-mid); border-top: 1px solid var(--line); padding: 96px 48px; }
+    .how-inner { max-width: 1280px; margin: 0 auto; }
 
-    .why-card-icon svg { width: 100%; height: 100%; fill: var(--gold-dim); }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; position: relative; }
 
-    .why-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 14px;
-      line-height: 1.15;
-    }
+    .step { padding: 0 40px 0 0; }
+    .step:last-child { padding-right: 0; }
 
-    .why-card-body {
-      font-size: 0.84rem;
-      font-weight: 400;
-      color: oklch(42% 0.01 80);
-      line-height: 1.8;
-      text-wrap: pretty;
-    }
-
-    /* ─────────────────────────────
-       CTA STRIP
-    ───────────────────────────── */
-    .cta-strip {
-      background: var(--ink-mid);
-      border-top: 1px solid var(--line);
-      padding: 64px 48px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle gold glow behind the section */
-    .cta-strip::before {
-      content: '';
-      position: absolute;
-      top: -80px; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 200px;
-      background: radial-gradient(ellipse, oklch(72% 0.10 80 / 0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-strip::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(oklch(100% 0 0 / 0.028) 1px, transparent 1px);
-      background-size: 28px 28px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .cta-strip-inner {
+    .step-num {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 1.5px solid oklch(72% 0.10 80 / 0.5);
+      background: linear-gradient(135deg, oklch(72% 0.10 80 / 0.15), oklch(72% 0.10 80 / 0.04));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--gold);
+      margin-bottom: 28px;
+      box-shadow: inset 0 1px 0 oklch(72% 0.10 80 / 0.2);
       position: relative; z-index: 1;
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
+      background-clip: padding-box;
     }
 
-    .cta-strip-text {}
+    .step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--cream); margin-bottom: 10px; }
+    .step-body { font-size: 0.82rem; font-weight: 300; color: var(--muted); line-height: 1.75; text-wrap: pretty; }
 
-    .cta-strip-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-      font-weight: 400;
-      color: var(--cream);
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
+    /* ── ZONE STRIP ── */
+    .zone-strip { background: oklch(8% 0.015 250); border-top: 1px solid var(--line); padding: 52px 48px; }
+    .zone-strip-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .zone-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 10px; }
+    .munis { display: flex; flex-wrap: wrap; gap: 7px; }
+    .muni { padding: 5px 12px; border: 1px solid var(--line); border-radius: 100px; font-size: 0.74rem; font-weight: 500; color: var(--muted); transition: all 0.2s; cursor: default; }
+    .muni:hover { border-color: oklch(72% 0.10 80 / 0.5); color: var(--gold-light); background: oklch(72% 0.10 80 / 0.06); }
+    .muni.hl { border-color: oklch(72% 0.10 80 / 0.4); color: var(--gold); background: oklch(72% 0.10 80 / 0.08); }
 
-    .cta-strip-sub {
-      font-size: 0.84rem;
-      color: var(--muted);
-      font-weight: 300;
-    }
 
-    .cta-strip-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 15px 32px;
-      background: var(--gold);
-      color: oklch(10% 0.02 80);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 4px 20px oklch(72% 0.10 80 / 0.25);
-    }
-
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      background: transparent;
-      color: var(--cream);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-ghost:hover { border-color: var(--gold-dim); color: var(--gold-light); }
-
-    /* ─────────────────────────────
-       FOOTER
-    ───────────────────────────── */
-    footer {
-      background: oklch(6.5% 0.012 250);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Gold top border */
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(to right,
-        transparent 0%,
-        oklch(72% 0.10 80 / 0.5) 20%,
-        oklch(84% 0.07 80 / 0.8) 50%,
-        oklch(72% 0.10 80 / 0.5) 80%,
-        transparent 100%
-      );
-    }
-
-    .footer-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    /* Main footer body: 3 columns */
-    .footer-main {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 0;
-      padding: 56px 48px 48px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .footer-col {
-      padding-right: 48px;
-    }
-
-    .footer-col:last-child { padding-right: 0; }
-
-    .footer-col + .footer-col {
-      padding-left: 48px;
-      border-left: 1px solid var(--line);
-    }
-
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--cream);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .footer-tagline {
-      font-size: 0.71rem;
-      color: var(--muted);
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      margin-bottom: 20px;
-    }
-
-    .footer-desc {
-      font-size: 0.78rem;
-      color: oklch(50% 0.006 80);
-      font-weight: 300;
-      line-height: 1.75;
-      text-wrap: pretty;
-      max-width: 260px;
-    }
-
-    .footer-col-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 20px;
-    }
-
-    .footer-contact-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer-contact-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .footer-contact-list svg {
-      width: 14px; height: 14px;
-      fill: var(--gold-dim);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .footer-contact-list a,
-    .footer-contact-list span {
-      font-size: 0.8rem;
-      color: oklch(60% 0.006 80);
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.2s;
-      line-height: 1.4;
-    }
-
-    .footer-contact-list a:hover { color: var(--gold-light); }
-
-    .footer-cif {
-      margin-top: 20px;
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: oklch(40% 0.005 80);
-      padding: 5px 10px;
-      border: 1px solid oklch(100% 0 0 / 0.06);
-      border-radius: 2px;
-    }
-
-    /* Legal bar */
-    .footer-legal-bar {
-      padding: 20px 48px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .footer-legal-icon {
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      border: 1px solid oklch(100% 0 0 / 0.08);
-      background: oklch(100% 0 0 / 0.03);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .footer-legal-icon svg { width: 12px; height: 12px; fill: oklch(50% 0.005 80); }
-
-    .footer-legal {
-      font-size: 0.68rem;
-      color: oklch(37% 0.005 80);
-      line-height: 1.75;
-      flex: 1;
-    }
-
-    .footer-legal a { color: oklch(48% 0.006 80); text-decoration: none; border-bottom: 1px solid oklch(100% 0 0 / 0.12); transition: color 0.2s, border-color 0.2s; }
-    .footer-legal a:hover { color: var(--gold-dim); border-color: oklch(72% 0.10 80 / 0.3); }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ─────────────────────────────
-       FLOATING BUTTONS
-    ───────────────────────────── */
-    .fab-group {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      z-index: 999;
-    }
-
-    .fab {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 20px oklch(0% 0 0 / 0.4), 0 0 0 1px oklch(100% 0 0 / 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-    }
-
-    .fab:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 10px 32px oklch(0% 0 0 / 0.45); }
-
-    .fab-whatsapp { background: #25D366; }
-    .fab-call     { background: var(--gold); }
-
-    .fab svg { width: 24px; height: 24px; fill: white; }
-    .fab-call svg { fill: oklch(10% 0.02 80); }
-
-    .fab-tooltip {
-      position: absolute;
-      right: 68px;
-      white-space: nowrap;
-      background: oklch(10% 0.015 250 / 0.95);
-      color: var(--cream);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 7px 12px;
-      border-radius: 3px;
-      border: 1px solid var(--line);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
-    }
-
-    .fab:hover .fab-tooltip { opacity: 1; }
-
-    .fab-pulse::after, .fab-call-pulse::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      animation: fab-ring 2.5s ease-out infinite;
-    }
-
-    .fab-pulse::after { border: 2px solid #25D366; }
-    .fab-call-pulse::after { border: 2px solid var(--gold); animation-delay: 0.8s; }
-
-    @keyframes fab-ring {
-      0%   { opacity: 0.7; transform: scale(1); }
-      100% { opacity: 0;   transform: scale(1.65); }
-    }
-
-    /* ─────────────────────────────
-       RESPONSIVE
-    ───────────────────────────── */
-    @media (max-width: 1024px) {
-      .hero-main { gap: 48px; padding: 64px 32px 48px; }
-      .form-wrap { width: 380px; }
-      .footer-main { padding: 40px 32px 32px; gap: 0; }
-      .footer-col { padding-right: 32px; }
-      .footer-col + .footer-col { padding-left: 32px; }
-      .footer-legal-bar { padding: 16px 32px; }
-    }
-
+    /* Responsive */
     @media (max-width: 860px) {
-      .hero-main {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 48px 24px 40px;
-        gap: 40px;
-      }
-
-      .hero-overlay {
-        background:
-          linear-gradient(to bottom,
-            oklch(8% 0.02 250 / 0.85) 0%,
-            oklch(8% 0.02 250 / 0.72) 100%
-          );
-      }
-
+      .hero-main { flex-direction: column; align-items: stretch; padding: calc(var(--nav-h) + 24px) 24px 36px; gap: 36px; }
+      .hero-overlay { background: linear-gradient(to bottom, oklch(8% 0.02 250 / 0.88) 0%, oklch(8% 0.02 250 / 0.78) 100%); }
       .hero-copy { text-align: center; }
       .eyebrow { justify-content: center; }
-      .hero-subtitle { max-width: 100%; margin-left: auto; margin-right: auto; }
-      .hero-features { width: max-content; max-width: 100%; margin-left: auto; margin-right: auto; align-items: flex-start; }
+      .hero-subtitle { max-width: 100%; margin-inline: auto; }
+      .hero-features { align-items: center; }
       .form-wrap { width: 100%; }
-      .trust-inner { grid-template-columns: repeat(2, 1fr); padding: 0 24px; }
-      .trust-item:nth-child(2) { border-right: none; }
-      .trust-item:nth-child(3) { border-top: 1px solid var(--line); }
-      .trust-item:nth-child(4) { border-top: 1px solid var(--line); border-right: none; }
-      .why { padding: 64px 24px; }
-      .why-grid { grid-template-columns: 1fr; }
-      .cta-strip { padding: 40px 24px; }
-      .cta-strip-inner { flex-direction: column; align-items: flex-start; }
-      footer { padding: 0; }
-      .footer-main { grid-template-columns: 1fr; padding: 40px 24px 32px; }
-      .footer-col { padding-right: 0; padding-left: 0 !important; border-left: none !important; border-top: 1px solid var(--line); padding-top: 28px; }
-      .footer-col:first-child { border-top: none; padding-top: 0; }
-      .footer-legal-bar { padding: 16px 24px; }
-      .footer-desc { max-width: 100%; }
+      .services { padding: 64px 24px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .how { padding: 64px 24px; }
+      .steps-grid { grid-template-columns: 1fr; gap: 36px; }
+      .zone-strip { padding: 40px 24px; }
     }
 
     @media (max-width: 480px) {
       .form-row { grid-template-columns: 1fr; }
-      .trust-inner { grid-template-columns: 1fr; }
-      .trust-item { border-right: none !important; border-top: 1px solid var(--line) !important; }
-      .trust-item:first-child { border-top: none !important; }
-      .cta-strip-actions { flex-direction: column; align-items: stretch; text-align: center; }
-      .btn-primary, .btn-ghost { justify-content: center; }
-      .btn-submit { font-size: 0.74rem; letter-spacing: 0.06em; padding: 15px 12px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .services-header { flex-direction: column; align-items: flex-start; }
     }
-
-    /* ── CONSENT CHECKBOX ── */
-    .form-consent {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-top: 14px;
-      padding: 12px 14px;
-      background: oklch(95% 0.005 80);
-      border: 1px solid oklch(88% 0.005 80);
-      border-radius: 3px;
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s;
-      user-select: none;
-    }
-
-    .form-consent:hover {
-      background: oklch(93% 0.006 80);
-      border-color: oklch(82% 0.008 80);
-    }
-
-    .form-consent:has(input:checked) {
-      background: oklch(72% 0.10 80 / 0.08);
-      border-color: oklch(72% 0.10 80 / 0.35);
-    }
-
-    .form-consent input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      min-width: 20px;
-      max-width: 20px;
-      padding: 0;
-      margin: 0;
-      margin-top: 1px;
-      border: 1.5px solid oklch(70% 0.01 80);
-      border-radius: 3px;
-      background: #fff;
-      cursor: pointer;
-      position: relative;
-      display: inline-block;
-      box-sizing: border-box;
-      transition: background 0.2s, border-color 0.2s, transform 0.12s;
-      flex-shrink: 0;
-    }
-
-    .form-consent input[type="checkbox"]:hover {
-      border-color: var(--gold-dim);
-      transform: scale(1.05);
-    }
-
-    .form-consent input[type="checkbox"]:checked {
-      background: var(--gold);
-      border-color: var(--gold);
-    }
-
-    .form-consent input[type="checkbox"]:checked::after {
-      content: '';
-      position: absolute;
-      left: 5px;
-      top: 1px;
-      width: 6px;
-      height: 11px;
-      border: solid oklch(10% 0.02 80);
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-      animation: checkPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    @keyframes checkPop {
-      0%   { transform: rotate(45deg) scale(0); opacity: 0; }
-      60%  { transform: rotate(45deg) scale(1.15); opacity: 1; }
-      100% { transform: rotate(45deg) scale(1); opacity: 1; }
-    }
-
-    .form-consent input[type="checkbox"]:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px oklch(72% 0.10 80 / 0.3);
-    }
-
-    .form-consent.error {
-      border-color: oklch(60% 0.18 25);
-      background: oklch(95% 0.02 25);
-      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
-    }
-
-    .form-consent.error input[type="checkbox"] {
-      border-color: oklch(60% 0.18 25);
-    }
-
-    @keyframes shake {
-      10%, 90% { transform: translateX(-1px); }
-      20%, 80% { transform: translateX(2px); }
-      30%, 50%, 70% { transform: translateX(-3px); }
-      40%, 60% { transform: translateX(3px); }
-    }
-
-    .form-consent span {
-      font-size: 0.71rem;
-      color: oklch(38% 0.01 80);
-      line-height: 1.6;
-      text-transform: none;
-      letter-spacing: normal;
-      font-weight: 400;
-    }
-
-    .form-consent a { color: oklch(38% 0.01 80); text-decoration: underline; }
-
-    .form-consent em {
-      font-style: normal;
-      color: oklch(55% 0.01 80);
-    }
-
-    /* ── MODALS ── */
-    .modal-backdrop {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: oklch(5% 0 0 / 0.82);
-      z-index: 2000;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 40px 20px;
-      overflow-y: auto;
-    }
-
-    .modal-backdrop.open { display: flex; }
-
-    .modal-box {
-      background: oklch(97% 0.006 80);
-      color: var(--ink);
-      border-radius: 4px;
-      max-width: 720px;
-      width: 100%;
-      box-shadow: 0 32px 80px oklch(0% 0 0 / 0.55);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .modal-header {
-      background: var(--ink-mid);
-      padding: 20px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid oklch(100% 0 0 / 0.08);
-    }
-
-    .modal-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--cream);
-      letter-spacing: 0.02em;
-    }
-
-    .modal-close {
-      width: 32px; height: 32px;
-      background: oklch(100% 0 0 / 0.06);
-      border: 1px solid oklch(100% 0 0 / 0.1);
-      border-radius: 50%;
-      color: var(--muted);
-      font-size: 1.1rem;
-      line-height: 1;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-
-    .modal-close:hover { background: oklch(100% 0 0 / 0.12); color: var(--cream); }
-
-    .modal-body {
-      padding: 32px 28px 36px;
-      max-height: 70vh;
-      overflow-y: auto;
-    }
-
-    .modal-body h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin: 22px 0 8px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid oklch(88% 0.005 80);
-    }
-
-    .modal-body h3:first-child { margin-top: 0; }
-
-    .modal-body p, .modal-body li {
-      font-size: 0.82rem;
-      color: oklch(35% 0.008 80);
-      line-height: 1.8;
-      text-wrap: pretty;
-    }
-
-    .modal-body ul {
-      padding-left: 18px;
-      margin: 6px 0;
-    }
-
-    .modal-body a { color: oklch(40% 0.01 80); }
-
-    .modal-section-tag {
-      display: inline-block;
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 16px;
-    }
-
-    /* ── FOOTER LEGAL LINKS ── */
-    .footer-legal-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .footer-legal-links a {
-      font-size: 0.70rem;
-      color: oklch(45% 0.006 80);
-      text-decoration: none;
-      border-bottom: 1px solid oklch(100% 0 0 / 0.12);
-      transition: color 0.2s;
-    }
-
-    .footer-legal-links a:hover { color: var(--gold-dim); }
-
-
-    /* ─────────────────────────────
-       SITE NAV
-    ───────────────────────────── */
-    .site-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      height: 68px;
-      display: flex;
-      align-items: center;
-      padding: 0 48px;
-      transition: background 0.5s, border-color 0.5s, box-shadow 0.5s;
-      border-bottom: 1px solid transparent;
-    }
-
-    .site-nav.scrolled {
-      background: oklch(8% 0.02 250 / 0.97);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom-color: oklch(100% 0 0 / 0.08);
-      box-shadow: 0 4px 40px oklch(0% 0 0 / 0.35);
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-    }
-
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: var(--cream);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .nav-sep {
-      width: 1px;
-      height: 20px;
-      background: oklch(100% 0 0 / 0.2);
-    }
-
-    .nav-tagline {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      line-height: 1.45;
-    }
-
-    .nav-spacer { flex: 1; }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--cream);
-      text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 9px 22px;
-      border: 1px solid oklch(100% 0 0 / 0.22);
-      border-radius: 2px;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-    }
-
-    .nav-cta:hover {
-      border-color: var(--gold-dim);
-      color: var(--gold-light);
-      background: oklch(72% 0.10 80 / 0.08);
-    }
-
-    .nav-cta svg { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
-
-    /* ─────────────────────────────
-       HERO SCROLL HINT
-    ───────────────────────────── */
-    .hero-scroll-hint {
-      position: absolute;
-      bottom: 112px;
-      left: 60px;
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: scrollFadeIn 1s ease 2s forwards, scrollBob 3.5s ease-in-out 3s infinite;
-      pointer-events: none;
-      transition: opacity 0.5s;
-    }
-
-    .hero-scroll-line {
-      width: 1px;
-      height: 36px;
-      background: linear-gradient(to bottom, var(--gold-dim), transparent);
-    }
-
-    .hero-scroll-text {
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: oklch(65% 0.06 80);
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-    }
-
-    @keyframes scrollFadeIn { to { opacity: 0.65; } }
-    @keyframes scrollBob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(7px); }
-    }
-
-    @media (max-width: 860px) {
-      .site-nav { padding: 0 24px; }
-      .nav-sep, .nav-tagline { display: none; }
-      .hero-scroll-hint { display: none; }
-    }
-
-    @media (max-width: 1024px) {
-      .hero-main { padding: 100px 32px 48px; }
-    }
-
-
-    /* ─────────────────────────────
-       COOKIE BANNER
-    ───────────────────────────── */
-    .cookie-banner {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      right: 24px;
-      max-width: 720px;
-      margin: 0 auto;
-      background: oklch(8% 0.015 250 / 0.97);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid oklch(100% 0 0 / 0.1);
-      border-radius: 6px;
-      padding: 20px 24px;
-      display: none;
-      align-items: center;
-      gap: 24px;
-      z-index: 1500;
-      box-shadow: 0 20px 60px oklch(0% 0 0 / 0.5), 0 0 0 1px oklch(72% 0.10 80 / 0.1);
-      transform: translateY(20px);
-      opacity: 0;
-      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s;
-    }
-
-    .cookie-banner.visible {
-      display: flex;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .cookie-icon {
-      width: 36px;
-      height: 36px;
-      flex-shrink: 0;
-      background: oklch(72% 0.10 80 / 0.12);
-      border: 1px solid oklch(72% 0.10 80 / 0.25);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .cookie-icon svg { width: 18px; height: 18px; fill: var(--gold); }
-
-    .cookie-text {
-      flex: 1;
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.55;
-      min-width: 0;
-    }
-
-    .cookie-text strong {
-      color: var(--cream);
-      font-weight: 600;
-    }
-
-    .cookie-text a {
-      color: var(--gold-light);
-      text-decoration: underline;
-      text-decoration-color: oklch(72% 0.10 80 / 0.4);
-      text-underline-offset: 2px;
-      transition: text-decoration-color 0.2s;
-    }
-
-    .cookie-text a:hover { text-decoration-color: var(--gold); }
-
-    .cookie-actions {
-      display: flex;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-
-    .cookie-btn {
-      padding: 10px 20px;
-      border-radius: 2px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      border: none;
-      transition: background 0.2s, transform 0.15s, color 0.2s, border-color 0.2s;
-      white-space: nowrap;
-    }
-
-    .cookie-btn-accept {
-      background: var(--gold);
-      color: oklch(10% 0.02 80);
-      box-shadow: 0 2px 12px oklch(72% 0.10 80 / 0.25);
-    }
-
-    .cookie-btn-accept:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 18px oklch(72% 0.10 80 / 0.35);
-    }
-
-    .cookie-btn-reject {
-      background: transparent;
-      color: var(--muted);
-      border: 1px solid oklch(100% 0 0 / 0.18);
-    }
-
-    .cookie-btn-reject:hover {
-      border-color: oklch(100% 0 0 / 0.3);
-      color: var(--cream);
-    }
-
-    @media (max-width: 720px) {
-      .cookie-banner {
-        bottom: 16px;
-        left: 16px;
-        right: 16px;
-        padding: 18px 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-      .cookie-icon { display: none; }
-      .cookie-actions { width: 100%; }
-      .cookie-btn { flex: 1; padding: 12px 16px; }
-    }
-
   </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7MDK8Z3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<nav class="site-nav" id="siteNav">
-  <a href="#" class="nav-brand">
-    <span class="nav-logo">Cyrmarsan</span>
-    <span class="nav-sep"></span>
-    <span class="nav-tagline">Mamparas<br>Sierra Noroeste</span>
-  </a>
-  <div class="nav-spacer"></div>
-  <a href="tel:+34667577891" class="nav-cta">
-    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
-    +34&nbsp;667&nbsp;577&nbsp;891
-  </a>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7MDK8Z3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Marco exterior con esquinas cortadas -->
+          <path d="M6 2h32l4 4v32l-4 4H6l-4-4V6z" stroke="oklch(72% 0.10 80 / 0.55)" stroke-width="0.75" fill="oklch(72% 0.10 80 / 0.06)"/>
+          <!-- C serif estilizada -->
+          <path d="M30 15.5
+            C28.5 12.8 25.5 11 22 11
+            C16.5 11 12 15.5 12 22
+            C12 28.5 16.5 33 22 33
+            C25.5 33 28.5 31.2 30 28.5"
+            stroke="oklch(72% 0.10 80)" stroke-width="2.2" stroke-linecap="butt" fill="none"/>
+          <!-- Serif superior -->
+          <line x1="27" y1="11" x2="33" y2="11" stroke="oklch(72% 0.10 80)" stroke-width="1.4" stroke-linecap="round"/>
+          <!-- Serif inferior -->
+          <line x1="27" y1="33" x2="33" y2="33" stroke="oklch(72% 0.10 80)" stroke-width="1.4" stroke-linecap="round"/>
+          <!-- Punto de acento dorado -->
+          <circle cx="22" cy="22" r="1.2" fill="oklch(72% 0.10 80 / 0.4)"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        <div class="nav-logo-name">Cyrmarsan</div>
+        <div class="nav-logo-sub">Mamparas · Noroeste Madrid</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="sobre-nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <a href="contacto.html" class="nav-cta">Presupuesto gratis</a>
+    <button class="nav-burger" id="burger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<!-- ── HERO ── -->
+<div class="nav-drawer" id="drawer">
+  <a href="index.html" class="active">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="sobre-nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="contacto.html" class="nav-drawer-cta">Presupuesto gratuito →</a>
+</div>
+
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
-
-  <!-- Shimmer particles -->
   <div class="hero-particles" id="heroParticles"></div>
 
   <div class="hero-main">
-    <!-- Left copy -->
     <div class="hero-copy">
       <div class="eyebrow">
         <span class="eyebrow-line"></span>
         <span class="eyebrow-text">Sierra Noroeste de Madrid</span>
       </div>
-
       <h1 class="hero-title">
-        Mamparas de baño<br />
-        <strong>a medida, instaladas</strong>
-        en tu hogar
+        Mamparas <span style="color:var(--gold-light);font-weight:600">Kassandra</span><br />
+        a medida en la <span style="font-weight:600;color:var(--gold-light)">Sierra Noroeste</span>
       </h1>
-
       <p class="hero-subtitle">
-        Diseño, fabricación e instalación profesional de mamparas de ducha y bañera en Galapagar, Las Rozas, Majadahonda, Pozuelo, Torrelodones y toda la zona noroeste de Madrid.
+        Instaladores de mamparas Kassandra en Galapagar, Las Rozas, Majadahonda, Pozuelo, Torrelodones y toda la zona noroeste. Presupuesto gratuito y sin compromiso.
       </p>
-
       <ul class="hero-features">
-        <li>
-          <span class="feature-mark">
-            <svg viewBox="0 0 12 12"><path d="M10 2L4.5 8.5 2 6"/><polyline points="10,2 4.5,8.5 2,6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          Presupuesto gratuito sin compromiso
-        </li>
-        <li>
-          <span class="feature-mark">
-            <svg viewBox="0 0 12 12"><path d="M10 2L4.5 8.5 2 6"/><polyline points="10,2 4.5,8.5 2,6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          Medición y asesoramiento a domicilio
-        </li>
-        <li>
-          <span class="feature-mark">
-            <svg viewBox="0 0 12 12"><path d="M10 2L4.5 8.5 2 6"/><polyline points="10,2 4.5,8.5 2,6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          Instalación profesional incluida
-        </li>
-        <li>
-          <span class="feature-mark">
-            <svg viewBox="0 0 12 12"><path d="M10 2L4.5 8.5 2 6"/><polyline points="10,2 4.5,8.5 2,6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          Empresa local con experiencia en la zona
-        </li>
+        <li><span class="fmark"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span> Presupuesto gratuito sin compromiso</li>
+        <li><span class="fmark"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span> Medición y asesoramiento a domicilio</li>
+        <li><span class="fmark"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span> Instalación profesional incluida</li>
+        <li><span class="fmark"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span> Empresa local con experiencia en la zona</li>
       </ul>
     </div>
 
-    <!-- Right: Lead form -->
     <div class="form-wrap">
       <div class="form-card">
         <div class="form-header">
-          <div class="form-header-accent"></div>
-          <div class="form-header-text">
-            <p class="form-card-title">Solicita tu presupuesto</p>
-            <p class="form-card-sub">Gratis · Sin compromiso · Respuesta en 24 h</p>
+          <div class="form-accent"></div>
+          <div>
+            <p class="form-title">Solicita tu presupuesto</p>
+            <p class="form-sub">Gratis · Sin compromiso · Respuesta en 24 h</p>
           </div>
         </div>
-
         <div class="form-body">
-          <!-- Success -->
           <div class="form-success" id="formSuccess">
             <div class="success-icon">✓</div>
             <p class="success-title">¡Solicitud recibida!</p>
-            <p class="success-body">
-              Nos pondremos en contacto contigo en menos de 24 horas con tu presupuesto personalizado.<br /><br />
-              ¿Prefieres llamarnos ahora?<br />
-              <strong><a href="tel:+34667577891" style="color: var(--gold-dim);">+34 667 577 891</a></strong>
-            </p>
+            <p class="success-body">Nos pondremos en contacto en menos de 24 horas.<br /><br /><strong><a href="tel:+34667577891" style="color:oklch(60% 0.08 80)">+34 667 577 891</a></strong></p>
           </div>
-
-          <!-- Form -->
           <form id="leadForm" class="form-form" action="https://formspree.io/f/myklwwzq" method="POST">
             <div class="form-row">
               <div class="form-group">
@@ -1599,523 +412,249 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name" />
               </div>
               <div class="form-group">
-                <label for="telefono">Teléfono *</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="6XX XXX XXX" required autocomplete="tel" />
+                <label for="apellido">Apellido *</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required autocomplete="family-name" />
               </div>
             </div>
-
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="tu@email.com" autocomplete="email" />
+              <label for="telefono">Teléfono *</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="6XX XXX XXX" required autocomplete="tel" maxlength="9" />
             </div>
-
             <div class="form-group">
               <label for="municipio">Municipio</label>
               <select id="municipio" name="municipio">
-                <option value="">¿Dónde realizamos la instalación?</option>
-                <option>Galapagar</option>
-                <option>Las Rozas</option>
-                <option>Majadahonda</option>
-                <option>Pozuelo de Alarcón</option>
-                <option>Torrelodones</option>
-                <option>Collado Villalba</option>
-                <option>Alpedrete</option>
-                <option>El Escorial</option>
-                <option>Otro municipio</option>
+                <option value="">¿Dónde instalamos?</option>
+                <option>Galapagar</option><option>Las Rozas</option><option>Majadahonda</option>
+                <option>Pozuelo de Alarcón</option><option>Torrelodones</option>
+                <option>Collado Villalba</option><option>Alpedrete</option>
+                <option>El Escorial</option><option>Otro municipio</option>
               </select>
             </div>
-
             <div class="form-group">
               <label for="mensaje">¿Qué necesitas? (opcional)</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Ej: mampara de ducha 80×195 cm, quiero ver opciones de vidrio…"></textarea>
+              <textarea id="mensaje" name="mensaje" placeholder="Ej: mampara de ducha 80×195 cm…"></textarea>
             </div>
-
             <input type="hidden" name="_subject" value="Nueva solicitud de presupuesto mampara" />
-            <input type="hidden" name="origen" value="Landing Sierranoroeste" />
-
-            <button type="submit" class="btn-submit">Quiero mi presupuesto gratuito</button>
-
-            <label class="form-consent">
-              <input type="checkbox" name="rgpd_consent" id="rgpdConsent" required />
-              <span>He leído y acepto la <a href="#" onclick="openModal('privacidadModal');return false;">Política de Privacidad</a>. Autorizo el tratamiento de mis datos para gestionar mi solicitud de presupuesto. <em>Campo obligatorio.</em></span>
-            </label>
+            <input type="hidden" name="origen" value="Web Inicio" />
+            <button type="submit" class="btn-submit" id="submitBtn">Quiero mi presupuesto gratuito</button>
+            <p class="form-legal">Al enviar aceptas nuestra <a href="contacto.html#privacidad">política de privacidad</a>. Responsable: Cyrmarsan S.L. · CIF B-81197295.</p>
           </form>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Scroll hint -->
-  <div class="hero-scroll-hint" id="scrollHint">
-    <div class="hero-scroll-line"></div>
-    <span class="hero-scroll-text">Scroll</span>
-  </div>
-
-  <!-- Trust bar -->
-  <div class="trust-bar">
+  <!-- Trust bar — flotando sobre la foto -->
+  <div class="trust-bar" style="position:absolute;bottom:0;left:0;right:0;z-index:4;background:oklch(6% 0.018 250 / 0.82);border-top:1px solid oklch(72% 0.10 80 / 0.18);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);">
     <div class="trust-inner">
       <div class="trust-item">
-        <div class="trust-icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M3 3h2v18H3zm16 0H5v2h14v14H5v2h16V3zM9 9h6v2H9zm0 4h6v2H9z"/></svg>
-        </div>
-        <div>
-          <div class="trust-label">Servicio</div>
-          <div class="trust-value">Medición a domicilio</div>
-        </div>
+        <div class="trust-icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 3h2v18H3zm16 0H5v2h14v14H5v2h16V3zM9 9h6v2H9zm0 4h6v2H9z"/></svg></div>
+        <div><div class="trust-label">Servicio</div><div class="trust-value">Medición a domicilio</div></div>
       </div>
       <div class="trust-item">
-        <div class="trust-icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M13.78 15.3 19.78 9.3 18.37 7.88 13.78 12.47 11.62 10.31 10.2 11.72 13.78 15.3M12 2C10.07 2 8.22 2.6 6.69 3.69L5.27 2.27C4.27 1.27 2.72 1.53 2.05 2.72L2 2.78V2.8C1.73 3.34 1.73 4 2 4.55L3.27 7.09A9.92 9.92 0 0 0 2 12C2 17.5 6.5 22 12 22S22 17.5 22 12 17.5 2 12 2M12 20A8 8 0 0 1 4 12C4 7.58 7.58 4 12 4S20 7.58 20 12 16.42 20 12 20Z"/></svg>
-        </div>
-        <div>
-          <div class="trust-label">Incluido</div>
-          <div class="trust-value">Instalación profesional</div>
-        </div>
+        <div class="trust-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div><div class="trust-label">Incluido</div><div class="trust-value">Instalación profesional</div></div>
       </div>
       <div class="trust-item">
-        <div class="trust-icon-wrap">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        </div>
-        <div>
-          <div class="trust-label">Cobertura</div>
-          <div class="trust-value">Sierra Noroeste Madrid</div>
-        </div>
+        <div class="trust-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div><div class="trust-label">Cobertura</div><div class="trust-value">Sierra Noroeste Madrid</div></div>
       </div>
       <a href="tel:+34667577891" class="trust-item">
-        <div class="trust-icon-wrap" style="background: oklch(72% 0.10 80 / 0.18); border-color: oklch(72% 0.10 80 / 0.40);">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
-        </div>
-        <div>
-          <div class="trust-label">Llámanos</div>
-          <div class="trust-value" style="color: var(--gold);">+34 667 577 891</div>
-        </div>
+        <div class="trust-icon-wrap" style="background:oklch(72% 0.10 80 / 0.18);border-color:oklch(72% 0.10 80 / 0.4);"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg></div>
+        <div><div class="trust-label">Llámanos</div><div class="trust-value" style="color:var(--gold)">+34 667 577 891</div></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ── WHY US ── -->
-<section class="why">
-  <div class="why-inner">
-    <div class="section-eyebrow reveal">
-      <span class="section-eyebrow-line"></span>
-      <span class="section-eyebrow-text">Por qué elegirnos</span>
+<!-- SERVICIOS PREVIEW -->
+<section class="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <div>
+        <div class="section-eyebrow reveal">
+          <span class="section-eyebrow-line" style="background:oklch(60% 0.08 80)"></span>
+          <span class="section-eyebrow-text">Catálogo Kassandra</span>
+        </div>
+        <h2 class="section-title dark reveal">Mamparas Kassandra para cada espacio</h2>
+      </div>
+      <a href="productos.html" class="btn-ghost reveal" style="color:var(--ink);border-color:var(--line-light)">Ver todos los productos →</a>
     </div>
-    <h2 class="section-title reveal">Tu especialista en mamparas en la zona noroeste</h2>
-
-    <div class="why-grid">
-      <div class="why-card reveal" style="transition-delay:0.05s">
-        <div class="why-number">01</div>
-        <div class="why-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3 class="why-card-title">Asesoramiento personalizado</h3>
-        <p class="why-card-body">
-          Nos desplazamos a tu domicilio para tomar medidas y asesorarte sobre las mejores opciones según tu espacio, presupuesto y estilo.
-        </p>
+    <div class="services-grid">
+      <div class="service-card reveal" style="transition-delay:0.05s">
+        <div class="service-card-img"><img src="uploads/Luna.jpg" alt="Kassandra fija" /></div>
+        <div class="service-num">01</div>
+        <h3 class="service-title">Kassandra fija</h3>
+        <p class="service-body">Diseño minimalista y elegante. Vidrio templado de seguridad con perfilería de aluminio anodizado.</p>
       </div>
-      <div class="why-card reveal" style="transition-delay:0.13s">
-        <div class="why-number">02</div>
-        <div class="why-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <h3 class="why-card-title">Instalación de principio a fin</h3>
-        <p class="why-card-body">
-          Nos encargamos de todo el proceso: fabricación, transporte e instalación. Tú solo tienes que disfrutar del resultado.
-        </p>
+      <div class="service-card reveal" style="transition-delay:0.1s">
+        <div class="service-card-img"><img src="uploads/Luka.jpg" alt="Kassandra corredera" /></div>
+        <div class="service-num">02</div>
+        <h3 class="service-title">Kassandra corredera</h3>
+        <p class="service-body">Sistema deslizante silencioso. Ideal para espacios reducidos. Cierre magnético de precisión.</p>
       </div>
-      <div class="why-card reveal" style="transition-delay:0.21s">
-        <div class="why-number">03</div>
-        <div class="why-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="why-card-title">Empresa local de confianza</h3>
-        <p class="why-card-body">
-          Somos una empresa asentada en Galapagar con amplio conocimiento de la zona noroeste. Cercanía, seriedad y compromiso en cada proyecto.
-        </p>
+      <div class="service-card reveal" style="transition-delay:0.15s">
+        <div class="service-card-img"><img src="uploads/Nardi.jpg" alt="Kassandra abatible" /></div>
+        <div class="service-num">03</div>
+        <h3 class="service-title">Kassandra abatible</h3>
+        <p class="service-body">Apertura tipo puerta. Bisagras inox 304. Mayor comodidad de acceso a la ducha.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:0.2s">
+        <div class="service-card-img"><img src="uploads/Siena.jpg" alt="Kassandra angular" /></div>
+        <div class="service-num">04</div>
+        <h3 class="service-title">Kassandra angular</h3>
+        <p class="service-body">Cabinas de ducha en esquina. Máximo aprovechamiento del espacio con diseño elegante.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CTA STRIP ── -->
+<!-- CÓMO FUNCIONA -->
+<section class="how">
+  <div class="how-inner">
+    <div class="section-eyebrow reveal"><span class="section-eyebrow-line"></span><span class="section-eyebrow-text">El proceso</span></div>
+    <h2 class="section-title reveal" style="margin-bottom:0">Así de sencillo es trabajar con nosotros</h2>
+    <div class="steps-grid">
+      <div class="step reveal" style="transition-delay:0.05s">
+        <div class="step-num">1</div>
+        <h3 class="step-title">Nos contactas</h3>
+        <p class="step-body">Rellena el formulario o llámanos. En menos de 24 horas nos ponemos en contacto para entender lo que necesitas.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.15s">
+        <div class="step-num">2</div>
+        <h3 class="step-title">Visita y presupuesto</h3>
+        <p class="step-body">Nos desplazamos a tu domicilio, tomamos medidas y presentamos un presupuesto personalizado sin compromiso.</p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.25s">
+        <div class="step-num">3</div>
+        <h3 class="step-title">Instalación y entrega</h3>
+        <p class="step-body">Fabricamos tu mampara a medida y la instalamos. Tú solo tienes que disfrutarlo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONA -->
+<div class="zone-strip">
+  <div class="zone-strip-inner">
+    <div class="reveal">
+      <div class="zone-label">Zona de cobertura</div>
+      <div class="munis">
+        <span class="muni hl">Galapagar</span>
+        <span class="muni">Las Rozas</span><span class="muni">Majadahonda</span>
+        <span class="muni">Pozuelo</span><span class="muni">Torrelodones</span>
+        <span class="muni">Collado Villalba</span><span class="muni">Alpedrete</span>
+        <span class="muni">El Escorial</span><span class="muni">Hoyo de Manzanares</span>
+        <span class="muni">Boadilla del Monte</span><span class="muni">Guadarrama</span>
+        <span class="muni">Moralzarzal</span><span class="muni">Cercedilla</span>
+        <span class="muni">+ más municipios</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
 <div class="cta-strip">
   <div class="cta-strip-inner reveal">
-    <div class="cta-strip-text">
+    <div>
       <h3 class="cta-strip-title">¿Listo para renovar tu baño?</h3>
-      <p class="cta-strip-sub">Solicita tu presupuesto o llámanos directamente. Sin compromiso.</p>
+      <p class="cta-strip-sub">Solicita tu presupuesto gratuito o llámanos directamente.</p>
     </div>
     <div class="cta-strip-actions">
-      <a href="#leadForm" class="btn-primary" onclick="document.getElementById('nombre').focus()">
-        Solicitar presupuesto gratuito
-      </a>
+      <a href="contacto.html" class="btn-gold">Solicitar presupuesto</a>
       <a href="tel:+34667577891" class="btn-ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
         +34 667 577 891
       </a>
     </div>
   </div>
 </div>
 
-<!-- ── FLOATING BUTTONS ── -->
-<div class="fab-group">
-  <a href="https://wa.me/34667577891?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20una%20mampara" target="_blank" rel="noopener" class="fab fab-whatsapp fab-pulse" aria-label="WhatsApp">
-    <span class="fab-tooltip">Escríbenos por WhatsApp</span>
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.533 5.851L.057 23.428a.75.75 0 0 0 .921.921l5.593-1.474A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.523-5.222-1.431l-.374-.222-3.878 1.021 1.023-3.858-.232-.381A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-  </a>
-  <a href="tel:+34667577891" class="fab fab-call fab-call-pulse" aria-label="Llamar">
-    <span class="fab-tooltip">Llámanos ahora</span>
-    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
-  </a>
-</div>
-
-<!-- ── FOOTER ── -->
-<footer id="politica-privacidad">
+<!-- FOOTER -->
+<footer>
   <div class="footer-inner">
     <div class="footer-main">
-      <!-- Col 1: Brand -->
-      <div class="footer-col reveal">
+      <div class="footer-col">
         <div class="footer-logo">Cyrmarsan S.L.</div>
         <div class="footer-tagline">Mamparas · Sierra Noroeste de Madrid</div>
-        <p class="footer-desc">
-          Especialistas en mamparas de ducha y bañera a medida. Instalación profesional en toda la Sierra Noroeste de Madrid desde Galapagar.
-        </p>
+        <p class="footer-desc">Especialistas en mamparas de ducha y bañera a medida. Instalación profesional en toda la Sierra Noroeste de Madrid desde Galapagar.</p>
         <span class="footer-cif">CIF B-81197295</span>
       </div>
-
-      <!-- Col 2: Contacto -->
-      <div class="footer-col reveal" style="transition-delay:0.1s">
+      <div class="footer-col">
         <p class="footer-col-label">Contacto</p>
         <ul class="footer-contact-list">
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
-            <a href="tel:+34667577891">+34 667 577 891</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            <a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <span>Calle La Libertad, Nº 1, 1º E<br />28260 Galapagar, Madrid</span>
-          </li>
+          <li><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg><a href="tel:+34667577891">+34 667 577 891</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>Calle La Libertad, Nº 1, 1º E<br/>28260 Galapagar, Madrid</span></li>
         </ul>
       </div>
-
-      <!-- Col 3: Zona -->
-      <div class="footer-col reveal" style="transition-delay:0.2s">
-        <p class="footer-col-label">Zona de cobertura</p>
-        <ul class="footer-contact-list">
-          <li><span style="padding-left:0">Galapagar · Las Rozas · Majadahonda</span></li>
-          <li><span>Pozuelo · Torrelodones · Alpedrete</span></li>
-          <li><span>Collado Villalba · El Escorial</span></li>
-          <li><span>Boadilla · Hoyo de Manzanares</span></li>
-          <li><span>Y toda la Sierra Noroeste de Madrid</span></li>
+      <div class="footer-col">
+        <p class="footer-col-label">Páginas</p>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto y presupuesto</a></li>
         </ul>
       </div>
     </div>
-
-    <!-- Legal bar -->
     <div class="footer-legal-bar">
-      <div class="footer-legal-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div style="flex:1">
-        <p class="footer-legal">
-          © 2025 Cyrmarsan S.L. · CIF B-81197295 · Calle La Libertad Nº 1, 1º E, 28260 Galapagar, Madrid. Todos los derechos reservados.
-          Tratamiento de datos conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
-        </p>
-        <div class="footer-legal-links">
-          <a href="#" onclick="openModal('avisoModal');return false;">Aviso Legal</a>
-          <a href="#" onclick="openModal('privacidadModal');return false;">Política de Privacidad</a>
-          <a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a>
-        </div>
-      </div>
+      <div class="footer-legal-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <p class="footer-legal"><strong style="color:oklch(50% 0.005 80)">Política de privacidad —</strong> Los datos personales facilitados son responsabilidad de Cyrmarsan S.L. (CIF B-81197295), Calle La Libertad Nº 1, 1º E, 28260 Galapagar, Madrid, con la finalidad de atender su solicitud de presupuesto. No se cederán a terceros salvo obligación legal. Derechos: acceso, rectificación, supresión y portabilidad en <a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a>. RGPD (UE) 2016/679 y LOPDGDD 3/2018. Reclamaciones: <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>.</p>
     </div>
   </div>
 </footer>
 
-<script>
-  // Ken Burns hero
-  // Hero image — set bg and trigger
-  const heroBg = document.getElementById('heroBg');
-  const bgUrl = (window.__resources && window.__resources.heroBgImg)
-    || 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1920&q=90&auto=format&fit=crop';
-  heroBg.style.backgroundImage = `url('${bgUrl}')`;
+<!-- FLOATING WA -->
+<a href="https://wa.me/34667577891?text=Hola%2C%20me%20interesa%20un%20presupuesto%20para%20una%20mampara" target="_blank" rel="noopener" class="fab-wa" aria-label="WhatsApp">
+  <span class="fab-tooltip">Escríbenos por WhatsApp</span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.533 5.851L.057 23.428a.75.75 0 0 0 .921.921l5.593-1.474A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.523-5.222-1.431l-.374-.222-3.878 1.021 1.023-3.858-.232-.381A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
 
-  // Shimmer particles — glass light reflections
-  const particleContainer = document.getElementById('heroParticles');
-  const particleData = [
-    { x: 72, y: 45, s: 6,  d: '7s',  dl: '0s'   },
-    { x: 78, y: 60, s: 4,  d: '9s',  dl: '1.5s' },
-    { x: 65, y: 72, s: 8,  d: '11s', dl: '3s'   },
-    { x: 82, y: 38, s: 5,  d: '8s',  dl: '0.8s' },
-    { x: 90, y: 55, s: 7,  d: '10s', dl: '2.2s' },
-    { x: 58, y: 80, s: 4,  d: '12s', dl: '4s'   },
-    { x: 85, y: 25, s: 5,  d: '6s',  dl: '1s'   },
-    { x: 75, y: 88, s: 9,  d: '13s', dl: '5.5s' },
-    { x: 68, y: 50, s: 3,  d: '8s',  dl: '2.8s' },
-    { x: 88, y: 70, s: 6,  d: '10s', dl: '0.3s' },
-  ];
-  particleData.forEach(({ x, y, s, d, dl }) => {
+<script>
+  // Navbar
+  const navbar = document.getElementById('navbar');
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('drawer');
+
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+
+  // Hero BG — real Kassandra product image
+  const heroBg = document.getElementById('heroBg');
+  heroBg.style.backgroundImage = "url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1920&q=90&auto=format&fit=crop')";
+
+  // Particles
+  const pc = document.getElementById('heroParticles');
+  [{x:72,y:45,s:6,d:'7s',dl:'0s'},{x:78,y:60,s:4,d:'9s',dl:'1.5s'},{x:65,y:72,s:8,d:'11s',dl:'3s'},{x:82,y:38,s:5,d:'8s',dl:'0.8s'},{x:90,y:55,s:7,d:'10s',dl:'2.2s'},{x:58,y:80,s:4,d:'12s',dl:'4s'},{x:85,y:28,s:5,d:'6s',dl:'1s'},{x:75,y:85,s:9,d:'13s',dl:'5.5s'}].forEach(({x,y,s,d,dl}) => {
     const el = document.createElement('div');
     el.className = 'p';
-    el.style.cssText = `left:${x}%;top:${y}%;width:${s}px;height:${s}px;--d:${d};--dl:${dl};`;
-    particleContainer.appendChild(el);
-  });
-
-  // Formspree AJAX
-  const form = document.getElementById('leadForm');
-  const success = document.getElementById('formSuccess');
-
-  // Visual error on consent checkbox when unchecked at submit attempt
-  const consentCheckbox = document.getElementById('rgpdConsent');
-  const consentLabel = consentCheckbox.closest('.form-consent');
-  consentCheckbox.addEventListener('invalid', (e) => {
-    e.preventDefault();
-    consentLabel.classList.remove('error');
-    void consentLabel.offsetWidth;
-    consentLabel.classList.add('error');
-    consentLabel.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-  consentCheckbox.addEventListener('change', () => {
-    if (consentCheckbox.checked) consentLabel.classList.remove('error');
-  });
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!consentCheckbox.checked) {
-      consentLabel.classList.remove('error');
-      void consentLabel.offsetWidth;
-      consentLabel.classList.add('error');
-      consentCheckbox.focus();
-      return;
-    }
-    const btn = form.querySelector('.btn-submit');
-    btn.textContent = 'Enviando…';
-    btn.disabled = true;
-
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      });
-
-      if (res.ok) {
-        window.location.href = '/gracias.html';
-      } else {
-        btn.textContent = 'Error. Inténtalo de nuevo';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Error de red. Inténtalo de nuevo';
-      btn.disabled = false;
-    }
+    el.style.cssText = `left:${x}%;top:${y}%;width:${s}px;height:${s}px;--d:${d};--dl:${dl}`;
+    pc.appendChild(el);
   });
 
   // Scroll reveal
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
+  const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  // Form submit
+  const form = document.getElementById('leadForm');
+  const success = document.getElementById('formSuccess');
+  const btn = document.getElementById('submitBtn');
 
-  // Nav — dark background on scroll
-  const siteNav = document.getElementById('siteNav');
-  const scrollHintEl = document.getElementById('scrollHint');
-
-  window.addEventListener('scroll', () => {
-    siteNav.classList.toggle('scrolled', window.scrollY > 50);
-    if (scrollHintEl && window.scrollY > 80) {
-      scrollHintEl.style.opacity = '0';
-    }
-  }, { passive: true });
-
-</script>
-
-
-<!-- MODAL: AVISO LEGAL (LSSI Art. 10) -->
-<div id="avisoModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="avisoTitle">
-  <div class="modal-box">
-    <div class="modal-header">
-      <span class="modal-title" id="avisoTitle">Aviso Legal</span>
-      <button class="modal-close" onclick="closeModal('avisoModal')" aria-label="Cerrar">&#10005;</button>
-    </div>
-    <div class="modal-body">
-      <span class="modal-section-tag">Ley 34/2002, de Servicios de la Sociedad de la Informacion (LSSI-CE)</span>
-
-      <h3>1. Datos identificativos del titular</h3>
-      <p>En cumplimiento del articulo 10 de la LSSI-CE, se informa al usuario de los siguientes datos:</p>
-      <ul>
-        <li><strong>Denominacion social:</strong> Cyrmarsan S.L.</li>
-        <li><strong>CIF:</strong> B-81197295</li>
-        <li><strong>Domicilio social:</strong> Calle La Libertad, N1, 1 E, 28260 Galapagar, Madrid (Espana)</li>
-        <li><strong>Telefono de contacto:</strong> +34 667 577 891</li>
-        <li><strong>Correo electronico:</strong> <a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a></li>
-        <li><strong>Actividad:</strong> Fabricacion, distribucion e instalacion de mamparas de ducha y bano a medida</li>
-      </ul>
-
-      <h3>2. Objeto y ambito de aplicacion</h3>
-      <p>El presente Aviso Legal regula el acceso y uso del sitio web titularidad de Cyrmarsan S.L. El acceso y utilizacion del sitio web implica la aceptacion plena de todas las disposiciones incluidas en este Aviso Legal.</p>
-
-      <h3>3. Propiedad intelectual e industrial</h3>
-      <p>Todos los contenidos del sitio web son titularidad del Titular o de sus licenciantes y estan protegidos por la legislacion espanola e internacional sobre propiedad intelectual e industrial. Queda expresamente prohibida su reproduccion, distribucion, comunicacion publica o transformacion sin autorizacion expresa y por escrito del Titular.</p>
-      <p>Las imagenes ilustrativas proceden de Unsplash y se usan bajo su licencia libre de derechos.</p>
-
-      <h3>4. Responsabilidad</h3>
-      <p>El Titular no se hace responsable de los danos derivados del uso incorrecto del sitio web ni del contenido de sitios web de terceros enlazados. Se reserva el derecho de modificar el contenido sin previo aviso.</p>
-
-      <h3>5. Legislacion aplicable y jurisdiccion</h3>
-      <p>Las relaciones entre el Titular y los usuarios se regiran por la legislacion espanola vigente. Para cualquier controversia, las partes se someten a los Juzgados y Tribunales del domicilio del usuario.</p>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: POLITICA DE PRIVACIDAD (RGPD) -->
-<div id="privacidadModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="privacidadTitle">
-  <div class="modal-box">
-    <div class="modal-header">
-      <span class="modal-title" id="privacidadTitle">Politica de Privacidad</span>
-      <button class="modal-close" onclick="closeModal('privacidadModal')" aria-label="Cerrar">&#10005;</button>
-    </div>
-    <div class="modal-body">
-      <span class="modal-section-tag">Reglamento (UE) 2016/679 (RGPD) - Ley Organica 3/2018 (LOPDGDD)</span>
-
-      <h3>1. Responsable del tratamiento</h3>
-      <ul>
-        <li><strong>Identidad:</strong> Cyrmarsan S.L.</li>
-        <li><strong>CIF:</strong> B-81197295</li>
-        <li><strong>Domicilio:</strong> Calle La Libertad, N1, 1 E, 28260 Galapagar, Madrid</li>
-        <li><strong>Contacto:</strong> <a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a> | +34 667 577 891</li>
-      </ul>
-
-      <h3>2. Datos recogidos y finalidad</h3>
-      <p>A traves del formulario de contacto se recogen los siguientes datos personales:</p>
-      <ul>
-        <li><strong>Nombre y telefono</strong> (obligatorios): para contactar y elaborar el presupuesto solicitado.</li>
-        <li><strong>Correo electronico</strong> (opcional): para envio del presupuesto por escrito.</li>
-        <li><strong>Municipio y descripcion</strong> (opcionales): para personalizar la oferta.</li>
-      </ul>
-
-      <h3>3. Base juridica del tratamiento</h3>
-      <p>El tratamiento se basa en el <strong>consentimiento expreso del interesado</strong> (Art. 6.1.a RGPD), otorgado mediante la marcacion de la casilla de verificacion del formulario. El consentimiento puede retirarse en cualquier momento sin que ello afecte a la licitud del tratamiento previo a su retirada.</p>
-
-      <h3>4. Plazo de conservacion</h3>
-      <p>Los datos se conservaran el tiempo necesario para gestionar la solicitud y, en su caso, la relacion contractual. Finalizada esa finalidad, seran suprimidos o anonimizados en un plazo maximo de <strong>3 anos</strong>, salvo obligacion legal de conservarlos por mayor tiempo.</p>
-
-      <h3>5. Destinatarios y transferencias internacionales</h3>
-      <p>Los datos no se cederan a terceros salvo obligacion legal. Para la gestion de formularios se utiliza <strong>Formspree</strong> (Formspree, Inc., EE.UU.), que actua como encargado del tratamiento bajo las garantias adecuadas del Mecanismo de Transferencia de Datos UE-EE.UU. No se realizan otras transferencias internacionales.</p>
-
-      <h3>6. Derechos del interesado</h3>
-      <p>Puede ejercer en cualquier momento los siguientes derechos escribiendo a <a href="mailto:cyrmarsan@gmail.com">cyrmarsan@gmail.com</a> con copia de su DNI u otro documento identificativo:</p>
-      <ul>
-        <li><strong>Acceso:</strong> conocer que datos personales tratamos.</li>
-        <li><strong>Rectificacion:</strong> corregir datos inexactos o incompletos.</li>
-        <li><strong>Supresion (derecho al olvido):</strong> solicitar la eliminacion de sus datos.</li>
-        <li><strong>Limitacion del tratamiento:</strong> solicitar la restriccion del uso de sus datos.</li>
-        <li><strong>Portabilidad:</strong> recibir sus datos en formato estructurado y de uso comun.</li>
-        <li><strong>Oposicion:</strong> oponerse al tratamiento de sus datos personales.</li>
-        <li><strong>Retirada del consentimiento:</strong> sin efectos retroactivos sobre el tratamiento ya realizado.</li>
-      </ul>
-      <p>El plazo de respuesta es de <strong>1 mes</strong> desde la recepcion de la solicitud, prorrogable otros 2 meses en casos complejos.</p>
-
-      <h3>7. Reclamacion ante la autoridad de control</h3>
-      <p>Si considera que el tratamiento de sus datos no se ajusta a la normativa, tiene derecho a reclamar ante la <strong>Agencia Espanola de Proteccion de Datos (AEPD)</strong>: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
-
-      <h3>8. Cookies</h3>
-      <p>Este sitio web utiliza las siguientes categorias de cookies:</p>
-      <ul>
-        <li><strong>Cookies tecnicas (necesarias):</strong> imprescindibles para el funcionamiento del sitio. No requieren consentimiento.</li>
-        <li><strong>Cookies analiticas (opcionales):</strong> utilizamos <strong>Google Analytics 4</strong> a traves de <strong>Google Tag Manager (GTM-W7MDK8Z3)</strong> para medir el trafico de forma anonima. Solo se activan si usted acepta expresamente mediante el banner de consentimiento. Puede rechazarlas o revocar su consentimiento en cualquier momento.</li>
-      </ul>
-      <p>Las tipografias se cargan desde Bunny Fonts (<a href="https://fonts.bunny.net" target="_blank" rel="noopener">fonts.bunny.net</a>), servicio conforme al RGPD que no instala cookies. Implementamos <strong>Google Consent Mode v2</strong>: mientras no se otorgue consentimiento, las cookies analiticas permanecen bloqueadas. El servidor de alojamiento puede generar registros tecnicos de acceso sin informacion personal identificable.</p>
-
-      <h3>9. Seguridad</h3>
-      <p>Cyrmarsan S.L. aplica las medidas tecnicas y organizativas adecuadas para garantizar la seguridad de los datos personales y evitar su alteracion, perdida o acceso no autorizado.</p>
-
-      <h3>10. Modificaciones</h3>
-      <p>Cyrmarsan S.L. se reserva el derecho a modificar esta Politica de Privacidad para adaptarla a novedades legislativas. La version vigente sera siempre la publicada en este sitio web.</p>
-      <p style="margin-top:16px;font-size:0.75rem;color:oklch(55% 0.005 80)">Ultima actualizacion: abril de 2026.</p>
-    </div>
-  </div>
-</div>
-
-<script>
-  function openModal(id) {
-    document.getElementById(id).classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(id) {
-    document.getElementById(id).classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.querySelectorAll('.modal-backdrop').forEach(function(el) {
-    el.addEventListener('click', function(e) { if (e.target === el) closeModal(el.id); });
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-backdrop.open').forEach(function(el) { closeModal(el.id); });
-    }
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    btn.textContent = 'Enviando…'; btn.disabled = true;
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      if (res.ok) { form.classList.add('hidden'); success.classList.add('visible'); }
+      else { btn.textContent = 'Error. Inténtalo de nuevo'; btn.disabled = false; }
+    } catch { btn.textContent = 'Error de red'; btn.disabled = false; }
   });
 </script>
-
-
-<!-- ══════════════════════════════════════════
-     COOKIE CONSENT BANNER
-═══════════════════════════════════════════ -->
-<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Consentimiento de cookies" aria-live="polite">
-  <div class="cookie-icon">
-    <svg viewBox="0 0 24 24"><path d="M21.98 11.18a2 2 0 0 1-2.98-.18 2 2 0 0 1-3-2 2 2 0 0 1-2-2 2 2 0 0 1-.18-2.98A10 10 0 1 0 22 12c0-.28-.01-.55-.02-.82zM7 15.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0-6.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
-  </div>
-  <p class="cookie-text">
-    <strong>Utilizamos cookies técnicas</strong> necesarias para el funcionamiento del sitio. No empleamos cookies de seguimiento ni publicitarias. Consulta nuestra <a href="#" onclick="openModal('privacidadModal');return false;">Política de Privacidad</a>.
-  </p>
-  <div class="cookie-actions">
-    <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()" type="button">Rechazar</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()" type="button">Aceptar</button>
-  </div>
-</div>
-
-<script>
-  (function() {
-    const banner = document.getElementById('cookieBanner');
-    const STORAGE_KEY = 'cyrmarsan_cookie_consent';
-
-    function showBanner() {
-      setTimeout(() => banner.classList.add('visible'), 800);
-    }
-
-    function hideBanner() {
-      banner.classList.remove('visible');
-    }
-
-    window.acceptCookies = function() {
-      try { localStorage.setItem(STORAGE_KEY, 'accepted'); } catch(e) {}
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
-      }
-      hideBanner();
-    };
-
-    window.rejectCookies = function() {
-      try { localStorage.setItem(STORAGE_KEY, 'rejected'); } catch(e) {}
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { analytics_storage: 'denied' });
-      }
-      hideBanner();
-    };
-
-    let consent = null;
-    try { consent = localStorage.getItem(STORAGE_KEY); } catch(e) {}
-    if (!consent) showBanner();
-  })();
-</script>
-
 </body>
 </html>
